@@ -28,7 +28,7 @@ const Pill = ({ children, color = C.accent }) => (
   <span style={{ display: "inline-block", padding: "3px 12px", borderRadius: 20, fontSize: 10, fontWeight: 800, letterSpacing: 1.8, textTransform: "uppercase", color, background: color + "14", border: `1px solid ${color}28` }}>{children}</span>
 );
 
-const Divider = () => <div style={{ height: 1, background: `linear-gradient(90deg, transparent 5%, ${C.border} 50%, transparent 95%)`, maxWidth: 1000, margin: "0 auto" }} />;
+const Divider = () => <div style={{ height: 1, background: `linear-gradient(90deg, transparent 5%, ${C.border} 50%, transparent 95%)`, maxWidth: 700, margin: "0 auto" }} />;
 
 const GlowCard = ({ children, color = C.accent, style = {} }) => (
   <div style={{ background: C.card, border: `1px solid ${color}22`, borderRadius: 16, padding: "28px 24px", position: "relative", overflow: "hidden", ...style }}>
@@ -357,30 +357,30 @@ export default function App() {
     return () => window.removeEventListener("scroll", h);
   }, []);
 
-  const S = { maxWidth: 1100, margin: "0 auto", padding: "100px 48px" };
+  const S = { maxWidth: 820, margin: "0 auto", padding: "80px 20px" };
 
   return (
     <div style={{ background: C.bg, color: C.text, fontFamily: "'Inter','Segoe UI',system-ui,sans-serif", minHeight: "100vh" }}>
       {/* Nav */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, background: C.bg + "dd", backdropFilter: "blur(16px)", borderBottom: `1px solid ${C.border}`, padding: "0 12px" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", alignItems: "center", height: 52, gap: 4, overflowX: "auto" }}>
-          <span style={{ fontWeight: 900, fontSize: 17, color: C.accent, marginRight: 20, letterSpacing: "-0.02em" }}>VLA</span>
-          {NAVS.map(n => <a key={n.id} href={`#${n.id}`} style={{ padding: "6px 14px", borderRadius: 8, fontSize: 13, fontWeight: 600, color: active === n.id ? C.accent : C.dim, background: active === n.id ? C.accentGlow : "transparent", textDecoration: "none", whiteSpace: "nowrap", transition: "all 0.2s" }}>{n.l}</a>)}
+        <div style={{ maxWidth: 960, margin: "0 auto", display: "flex", alignItems: "center", height: 46, gap: 2, overflowX: "auto" }}>
+          <span style={{ fontWeight: 900, fontSize: 15, color: C.accent, marginRight: 12, letterSpacing: "-0.02em" }}>VLA</span>
+          {NAVS.map(n => <a key={n.id} href={`#${n.id}`} style={{ padding: "5px 9px", borderRadius: 7, fontSize: 11, fontWeight: 600, color: active === n.id ? C.accent : C.dim, background: active === n.id ? C.accentGlow : "transparent", textDecoration: "none", whiteSpace: "nowrap", transition: "all 0.2s" }}>{n.l}</a>)}
         </div>
       </nav>
 
       {/* ═══ HERO ═══ */}
-      <section id="hero" style={{ ...S, paddingTop: 140, paddingBottom: 60, textAlign: "center" }}>
+      <section id="hero" style={{ ...S, paddingTop: 120, textAlign: "center" }}>
         <FadeIn>
-          <h1 style={{ fontSize: "clamp(34px,5vw,58px)", fontWeight: 900, margin: "0 0 18px", lineHeight: 1.08, letterSpacing: "-0.035em", background: `linear-gradient(135deg, ${C.text} 30%, ${C.accentSoft} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+          <h1 style={{ fontSize: "clamp(30px,5.5vw,52px)", fontWeight: 900, margin: "0 0 14px", lineHeight: 1.08, letterSpacing: "-0.035em", background: `linear-gradient(135deg, ${C.text} 30%, ${C.accentSoft} 100%)`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             Vision Language Action Models
           </h1>
-          <p style={{ fontSize: 18, color: C.muted, maxWidth: 620, margin: "0 auto 32px", lineHeight: 1.65 }}>
+          <p style={{ fontSize: 17, color: C.muted, maxWidth: 520, margin: "0 auto 28px", lineHeight: 1.65 }}>
             How transformers learned to see, understand language, and control robots in one unified model.
           </p>
-          <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
             {["Architecture", "Model Comparison", "Training Pipeline", "Edge Deployment"].map((t, i) => (
-              <span key={i} style={{ padding: "8px 20px", borderRadius: 8, fontSize: 13, fontWeight: 600, background: C.card, border: `1px solid ${C.border}`, color: C.muted }}>{t}</span>
+              <span key={i} style={{ padding: "7px 16px", borderRadius: 8, fontSize: 12, fontWeight: 600, background: C.card, border: `1px solid ${C.border}`, color: C.muted }}>{t}</span>
             ))}
           </div>
         </FadeIn>
@@ -393,7 +393,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.accent}>01 / Evolution</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>From Hardcoded to Intelligent</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 660, margin: "0 auto" }}>Four paradigm shifts in how machines interact with the physical world.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 560, margin: "0 auto" }}>Four paradigm shifts in how machines interact with the physical world.</p>
         </div></FadeIn>
         <div style={{ position: "relative", paddingLeft: 32 }}>
           <div style={{ position: "absolute", left: 11, top: 20, bottom: 20, width: 2, background: `linear-gradient(${C.dim}44, ${C.accent}44, ${C.green}44, ${C.orange}66)`, borderRadius: 2 }} />
@@ -424,7 +424,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.pink}>02 / Architecture</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>The VLA Architecture</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 680, margin: "0 auto" }}>A VLM extended with an Action Decoder, running in a closed-loop with the robot's state feeding back into the model.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 580, margin: "0 auto" }}>A VLM extended with an Action Decoder, running in a closed-loop with the robot's state feeding back into the model.</p>
         </div></FadeIn>
 
         <FadeIn delay={0.1}>
@@ -443,7 +443,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.cyan}>03 / Deep Dive</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>SEE, THINK, ACT</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 680, margin: "0 auto" }}>Using OpenVLA as a reference. A dual vision encoder, a 7B language backbone, and discrete action tokens.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 580, margin: "0 auto" }}>Using OpenVLA as a reference. A dual vision encoder, a 7B language backbone, and discrete action tokens.</p>
         </div></FadeIn>
 
         {/* V2 flowchart */}
@@ -493,7 +493,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.green}>04 / Models</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>The Model Landscape</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 680, margin: "0 auto" }}>Click each model to explore its architecture, strengths, and tradeoffs.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 580, margin: "0 auto" }}>Click each model to explore its architecture, strengths, and tradeoffs.</p>
         </div></FadeIn>
 
         <ModelCard name="RT-2" org="Google DeepMind" year="2023" params="5B / 55B" actionType="Discrete" color={C.accent}
@@ -566,7 +566,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.orange}>06 / Training</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>How VLAs Are Trained</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 680, margin: "0 auto" }}>A 4-phase pipeline from web-scale pre-training to real-world safety validation.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 560, margin: "0 auto" }}>A 4-phase pipeline from web-scale pre-training to real-world safety validation.</p>
         </div></FadeIn>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 24, position: "relative", paddingLeft: 4 }}>
@@ -593,7 +593,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.red}>07 / Deployment</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>Edge Deployment</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 680, margin: "0 auto" }}>Training runs on A100s. The robot has a Jetson Orin, 30W, and no WiFi.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 560, margin: "0 auto" }}>Training runs on A100s. The robot has a Jetson Orin, 30W, and no WiFi.</p>
         </div></FadeIn>
 
         <FadeIn>
@@ -658,7 +658,7 @@ export default function App() {
         <FadeIn><div style={{ textAlign: "center", marginBottom: 40 }}>
           <Pill color={C.red}>08 / Potential Gaps</Pill>
           <h2 style={{ fontSize: 32, fontWeight: 800, margin: "14px 0 8px", letterSpacing: "-0.02em" }}>Where the Field Stands</h2>
-          <p style={{ fontSize: 16, color: C.muted, maxWidth: 680, margin: "0 auto" }}>Unsolved challenges and active research directions shaping the next generation of VLA systems.</p>
+          <p style={{ fontSize: 15, color: C.muted, maxWidth: 560, margin: "0 auto" }}>Unsolved challenges and active research directions shaping the next generation of VLA systems.</p>
         </div></FadeIn>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {[
